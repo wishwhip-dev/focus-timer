@@ -9,7 +9,7 @@
  * the readout loses nothing, and a session that ends while the tab is hidden completes the
  * moment any tick (or the tab's return) catches up with real time.
  */
-import { useCallback, useEffect, useMemo, useReducer, useRef, useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/badge";
