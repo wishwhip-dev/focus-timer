@@ -93,7 +93,7 @@ export function PomodoroTimer() {
   stateRef.current = state;
 
   const today = useToday();
-  const { data: sessions, isLoading } = useStoredQuery(database, listSessions);
+  const { data: sessions } = useStoredQuery(database, listSessions);
 
   // Sound state. `unlockAudio` runs inside the Start handler — a browser only lets a user
   // gesture resume the shared AudioContext, so the chime can play when a phase ends later.
