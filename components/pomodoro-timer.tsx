@@ -99,7 +99,6 @@ export function PomodoroTimer() {
   // gesture resume the shared AudioContext, so the chime can play when a phase ends later.
   const audioStatus = useAudioStatus();
   const [muted, setMutedState] = useState(false);
-  const audible = audioStatus === "running" && !muted;
 
   const announceCompletion = useCallback((phase: Phase) => {
     playChime();
@@ -260,7 +259,6 @@ export function PomodoroTimer() {
           </Button>
         </div>
         {audioStatus === "unsupported" && <span className="sr-only">Sound is not available in this browser.</span>}
-
         <div className="w-full border-t pt-4 text-center" aria-live="polite">
           {todaySessions === null ? (
             <>
