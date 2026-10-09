@@ -1,6 +1,7 @@
 /**
  * This app's queries. Components call these, never Dexie directly.
  */
+import { localDateString } from "@/lib/dates";
 import { database, newId, type FocusSession } from "@/lib/db";
 
 const sessions = async () => (await database.ready()).sessions;
