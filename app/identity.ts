@@ -5,8 +5,9 @@
  * change here reaches every one of them. Keep `name` short and `description` one plain sentence.
  */
 export const identity = {
-  name: "Focus timer",
-  description: "A pomodoro focus timer: Start, pause and reset a 25-minute session, a short break after, a soft chime when a session ends, and a daily count of finished…",
-  accent: "#1d4ed8",
-  initial: "F",
+  name: "Pomodoro Focus Timer",
+  description:
+    "A pomodoro timer that runs 25-minute focus sessions with 5-minute breaks, a soft chime at each end, and a daily count of finished sessions kept in your browser.",
+  accent: "#c2410c",
+  initial: "P",
 } as const;
