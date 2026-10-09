@@ -87,10 +87,13 @@ function formatCountdown(ms: number): string {
 export function PomodoroTimer() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // The mirror the tick callback reads: dispatches from outside React render only after a
-  // re-render, so the mirror is advanced by hand the moment the callback completes a phase.
+  // The mirror the tick callback reads, synced outside render — refs must not be written during
+  // render. When the callback completes a phase it advances the mirror itself, so a second tick
+  // before these effects run cannot announce the same completion twice.
   const stateRef = useRef(state);
-  stateRef.current = state;
+  useEffect(() => {
+    stateRef.current = state;
+  });
 
   const today = useToday();
   const { data: sessions } = useStoredQuery(database, listSessions);
