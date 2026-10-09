@@ -269,7 +269,6 @@ export function PomodoroTimer() {
               </span>
             </p>
           )}
-          {isLoading && <span className="sr-only">Loading sessions</span>}
         </div>
       </CardContent>
     </Card>
