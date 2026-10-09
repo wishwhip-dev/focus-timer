@@ -146,12 +146,18 @@ export function PomodoroTimer() {
 
   // Keyboard: Space starts or pauses, R resets. When the keystroke lands on a button or other
   // control, that control's own activation handles it — which is exactly what keeps Space on a
-  // focused Start button from toggling twice.
+  // focused Start button from toggling twice — and a dialog (like Clear history) owns the keys
+  // while it is open.
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey) return;
       const target = event.target;
-      if (target instanceof HTMLElement && target.closest("button, a, input, select, textarea, [role='button'], [contenteditable='']")) return;
+      if (
+        target instanceof Element &&
+        target.closest("button, a, input, select, textarea, [role='button'], [role='dialog'], [contenteditable=''], [contenteditable='true']")
+      ) {
+        return;
+      }
       if (event.code === "Space" || event.key === " ") {
         event.preventDefault();
         dispatch({ type: "toggle", now: Date.now() });
