@@ -27,7 +27,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { database } from "@/lib/db";
 import { clearSessions, listSessions } from "@/lib/data/sessions";
 import { dayLabel, dayOffset, localDateString, weekdayLabel } from "@/lib/dates";
-import { useDatabaseTransfer, useStorageStatus } from "@/lib/storage/react";
+import { useDatabaseTransfer, useStorageStatus, useStoredQuery } from "@/lib/storage/react";
 import { useToday } from "@/lib/use-today";
 
 const chartConfig = { sessions: { label: "Sessions", color: "var(--chart-1)" } } satisfies ChartConfig;
