@@ -258,7 +258,7 @@ export function PomodoroTimer() {
             {soundButtonLabel}
           </Button>
         </div>
-        {audioStatus === "unsupported" && <span className="sr-only">Sound is not available in this browser.</span>}
+
         <div className="w-full border-t pt-4 text-center" aria-live="polite">
           {todaySessions === null ? (
             <>
