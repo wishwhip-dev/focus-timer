@@ -19,7 +19,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { database } from "@/lib/db";
 import { listSessions, recordSession } from "@/lib/data/sessions";
 import { playChime } from "@/lib/sound";
-import { useIsHydrated, useStoredQuery } from "@/lib/storage/react";
+import { useStoredQuery } from "@/lib/storage/react";
 import { useToday } from "@/lib/use-today";
 import { setMuted, unlockAudio, useAudioStatus } from "@/lib/audio";
 
