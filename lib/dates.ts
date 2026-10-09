@@ -31,9 +31,16 @@ export function shortDateLabel(date: Date): string {
   return `${MONTHS[date.getMonth()]} ${date.getDate()}`;
 }
 
+/** The local date `YYYY-MM-DD` of the calendar day before the one given. */
+export function previousDateString(today: string): string {
+  const [year, month, day] = today.split("-").map(Number);
+  return localDateString(new Date(year!, month! - 1, day! - 1));
+}
+
 /** `today` / `yesterday` / a short date, for the history table's first column. */
 export function dayLabel(date: Date, today: string): string {
-  if (localDateString(date) === today) return "Today";
-  if (localDateString(dayOffset(new Date(), 1)) === localDateString(date)) return "Yesterday";
+  const label = localDateString(date);
+  if (label === today) return "Today";
+  if (label === previousDateString(today)) return "Yesterday";
   return shortDateLabel(date);
 }
