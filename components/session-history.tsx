@@ -107,10 +107,10 @@ export function SessionHistory() {
         ) : (
           <>
             <ChartContainer config={chartConfig} className="h-56 w-full">
-              <BarChart data={rows.days} margin={{ top: 8, right: 4, left: -28, bottom: 0 }}>
+              <BarChart data={rows.days} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
                 <CartesianGrid vertical={false} />
                 <XAxis dataKey="day" tickLine={false} axisLine={false} tickMargin={8} />
-                <YAxis allowDecimals={false} tickLine={false} axisLine={false} width={40} />
+                <YAxis allowDecimals={false} tickLine={false} axisLine={false} width={32} />
                 <ChartTooltip content={<ChartTooltipContent />} />
                 {/* `minPointSize` keeps a zero-day visible as a sliver — today counts, even at zero. */}
                 <Bar dataKey="sessions" fill="var(--color-sessions)" radius={4} minPointSize={2} isAnimationActive={false} />
